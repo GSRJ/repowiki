@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const ItemContainer = styled.div`
   width: 80%;
+  font-family: monospace;
 
   h3 {
     font-size: 32px;

@@ -1,23 +1,28 @@
 import React from "react";
 import { ItemContainer } from "./styles";
 
-export const ItemRepo = () => {
+export const ItemRepo = ({ repo, remove }) => {
+  const handleRemove = (id) => {
+    remove(repo.id);
+  };
   return (
     <ItemContainer>
-      <h3>Gerson</h3>
-      <p>teste</p>
+      <h3>{repo.name}</h3>
+      <p>{repo.full_name}</p>
       <a
-        href=''
+        href={repo.html_url}
+        target='blank'
         className='details'
       >
         Ver repositório
       </a>
-      <a
-        href=''
+      <button
+        type='button'
+        onClick={handleRemove}
         className='remove'
       >
         Remover
-      </a>
+      </button>
       <hr />
     </ItemContainer>
   );
